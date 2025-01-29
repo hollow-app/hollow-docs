@@ -1,28 +1,44 @@
 [
-  {
-    "title": "Getting Started",
-    "href": "/getting-started",
-    "noLink": true,
-    "items": [
-      { "title": "Introduction", "href": "/introduction" },
-      {
-        "title": "Installation",
-        "href": "/installation",
-        "items": [
-          { "title": "Laravel", "href": "/laravel" },
-          { "title": "React", "href": "/react" },
-          { "title": "Gatsby", "href": "/gatsby" }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Server Actions",
-    "href": "/server-actions",
-    "noLink": true,
-    "items": [
-      { "title": "getSession", "href": "/getSession" },
-      { "title": "getToken", "href": "/getToken" }
-    ]
-  }
-]
+    {
+      "title": "Introduction",
+      "href": "/introduction",
+      "noLink": false
+    },
+    {
+      "title": "Overview",
+      "href": "/overview",
+      "noLink": false,
+      "items": [
+        { "title": "Architecture", "href": "/hollow-architecture" },
+        { "title": "Editor", "href": "/editor" },
+        { "title": "Tools", "href": "/tools" }
+      ]
+    },
+    {
+      "title": "Plugins",
+      "href": "/plugins",
+      "noLink": true,
+      "items": [
+        { "title": "Introduction", "href": "/plugins-introduction" },
+        { 
+            "title": "Build a Plugin", 
+            "href": "/build-a-plugin", 
+            "items":[
+                { "title": "Getting Started", "href": "/plugins-getting-started" },
+                { "title": "Manifest", "href": "/plugins-manifest" },
+                { "title": "Icon", "href": "/plugins-icon" },
+                { "title": "index", "href": "/plugins-index" },
+                { "title": "publish", "href": "/plugins-publish" }
+            ]
+        },
+        { 
+            "title": "Style a Plugin", 
+            "href": "/style-a-plugin", 
+            "items":[
+                { "title": "Colors", "href": "/plugins-colors" },
+                { "title": "Classes", "href": "/plugins-classes" }            
+            ]
+        }
+      ]
+    }
+  ]
