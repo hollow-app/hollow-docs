@@ -23,6 +23,7 @@
         { 
             "title": "Build a Plugin", 
             "href": "/build-a-plugin", 
+            "noLink": true,
             "items":[
                 { "title": "Getting Started", "href": "/plugins-getting-started" },
                 { "title": "Manifest", "href": "/plugins-manifest" },
@@ -34,6 +35,7 @@
         { 
             "title": "Style a Plugin", 
             "href": "/style-a-plugin", 
+            "noLink": true,
             "items":[
                 { "title": "Colors", "href": "/plugins-colors" },
                 { "title": "Classes", "href": "/plugins-classes" }            
