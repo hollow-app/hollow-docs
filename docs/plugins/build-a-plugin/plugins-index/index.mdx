@@ -1,0 +1,119 @@
+# Setting Up Your Development Environment
+
+Welcome to Hollow plugin development! This guide will help you get started creating plugins from scratch. We'll begin by understanding the key class, `IPlugin`, and its role in the Hollow plugin system.
+
+## Understanding the `IPlugin` Class
+
+Every Hollow plugin must implement the `IPlugin` interface. This interface defines the core lifecycle methods your plugin will use to interact with Hollow. Here's an example implementation:
+
+```typescript
+import { IPlugin, ICard, DataBase } from "hollow-api";
+
+class MyPlugin implements IPlugin {
+    async onCreate(card_name: string, db: DataBase): Promise<boolean> {
+        // This method is triggered when a new card is created.
+        await db.putData(card_name, { initialized: true });
+        return true;
+    }
+
+    async onDelete(card_name: string, db: DataBase): Promise<boolean> {
+        // This method is triggered when a card is deleted.
+        await db.deleteData(card_name);
+        return true;
+    }
+
+    async onLoad(card: ICard): Promise<boolean> {
+        // This method is called when a card is loaded into the interface.
+        console.log(`Card loaded: \${card.name}`);
+        return true;
+    }
+}
+```
+
+### Key Methods in `IPlugin`
+
+-   **`onCreate`**: Handles initialization logic when a new card is created. This is a good place to store initial data into the plugin's database.
+-   **`onDelete`**: Cleans up resources or data when a card is deleted.
+-   **`onLoad`**: Manages the logic when a card is added to the workspace. You can use this method to render your tool inside the card's container.
+
+For more details about these methods, refer to the [Plugin API Documentation](plugin-api.md).
+
+## Setting Up the Development Environment
+
+To develop plugins for Hollow, you'll need the following tools installed:
+
+1. **Node.js** (v16 or higher): To manage dependencies and run your development environment.
+2. **TypeScript**: Recommended for type-safe plugin development.
+3. **Git**: For version control and accessing the Hollow template.
+
+Follow these steps to set up your environment:
+
+1. Create a new directory for your plugin:
+
+    ```bash
+    mkdir my-hollow-plugin
+    cd my-hollow-plugin
+    ```
+
+2. Initialize a new `npm` project:
+
+    ```bash
+    npm init -y
+    ```
+
+3. Install the required packages:
+
+    ```bash
+    npm install hollow-api
+    ```
+
+4. Create the required files:
+
+    - **`manifest.json`**: Defines metadata about your plugin.
+    - **`icon.svg`**: Represents your plugin visually in Hollow.
+    - **`index.ts`**: The main entry point for your plugin's TypeScript code.
+
+5. Use `esbuild` to bundle your TypeScript code into a single `index.js` file. To simplify this process, you can use the pre-made `esbuild` configuration provided by the Hollow team. Download it from [here](https://github.com/hollow-app/hollow-sample-plugin/blob/main/esbuild.config.mjs).
+
+    Once downloaded, run the build process with:
+
+    ```bash
+    node esbuild.config.mjs
+    ```
+
+    This will generate an `index.js` file, which Hollow will use to execute your plugin.
+
+## Using the Hollow Template Repository
+
+If you prefer a preconfigured setup, the Hollow team provides a [sample plugin repository](https://github.com/hollow-app/hollow-sample-plugin) that you can use as a starting point. This template includes:
+
+-   A working `manifest.json` file.
+-   An example `icon.svg`.
+-   A preconfigured `esbuild` setup for bundling your TypeScript code.
+
+To use the template:
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/hollow-app/hollow-sample-plugin my-plugin
+    ```
+
+2. Navigate into the project directory:
+
+    ```bash
+    cd my-plugin
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Run the build process:
+    ```bash
+    node esbuild.config.mjs
+    ```
+
+You're now ready to start developing your plugin by modifying the provided `index.ts`, `manifest.json`, and `icon.svg`.

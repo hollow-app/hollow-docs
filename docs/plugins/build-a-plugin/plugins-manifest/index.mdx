@@ -1,0 +1,85 @@
+# manifest.json Documentation
+
+The `manifest.json` file is a crucial part of every Hollow plugin. It contains essential metadata about your plugin, including its version, description, author details, and more. This file helps Hollow identify and manage your plugin. Below is a breakdown of the fields in the `manifest.json` file.
+
+## Required Fields
+
+### version
+
+-   **Type**: string
+-   **Description**: Specifies the version of the plugin. This helps Hollow track and manage plugin updates.
+
+### name
+
+-   **Type**: string
+-   **Description**: The name of the plugin, which will be displayed in the Hollow interface.
+
+### description
+
+-   **Type**: string
+-   **Description**: A short description of what the plugin does, displayed within the Hollow interface.
+
+### author
+
+-   **Type**: string
+-   **Description**: The name of the author or creator of the plugin.
+
+### authorUrl
+
+-   **Type**: string
+-   **Description**: The URL of the author's website or profile. This can link to a personal page, a GitHub profile, or a plugin repository.
+
+## Optional Fields
+
+### DataBaseVersion
+
+-   **Type**: number (optional)
+-   **Description**: If provided, the plugin can utilize Hollow's built-in IndexedDB. If not provided, the plugin must manage its own database system.
+
+### defaultCard (optional)
+
+-   **Type**: object
+-   **Description**: This object defines the initial styling and layout for the plugin's card in the Hollow interface. It contains several properties that control the appearance and positioning of the card when first created.
+
+#### Properties of `defaultCard`:
+
+-   **width**: The width of the card in grid blocks.
+-   **height**: The height of the card in grid blocks.
+-   **cardRadius**: The radius of the card's corners, controlling the roundness.
+-   **cardMargin**: The margin around the entire card, adding space between the card and the edges.
+-   **cardInnerMargin**: The inner margin, or padding, inside the card, between its borders and content.
+-   **cardShade**: The background shade or color applied to the card, typically derived from the app’s secondary color.
+-   **cardOpacity**: The opacity of the card's background, adjusting its transparency without affecting content visibility.
+-   **shadow**: A boolean value determining whether a shadow is applied to the card's borders.
+-   **glass**: A boolean value indicating whether the card has a glass-like effect (frosted or blurred background).
+
+### Example of `manifest.json`:
+
+```json
+{
+    "version": "1.0.0",
+    "name": "MyPlugin",
+    "description": "A plugin to enhance Hollow with useful features.",
+    "author": "John Doe",
+    "authorUrl": "https://johndoe.com",
+    "DataBaseVersion": 1,
+    "defaultCard": {
+        "width": 6,
+        "height": 4,
+        "cardRadius": 8,
+        "cardMargin": 10,
+        "cardInnerMargin": 15,
+        "cardShade": 0.2,
+        "cardOpacity": 0.9,
+        "shadow": true,
+        "glass": false
+    }
+}
+```
+
+## Important Notes:
+
+-   If the `DataBaseVersion` is provided, the plugin will be able to use Hollow’s IndexedDB for local storage. If this field is missing, the plugin must implement its own database management system, it's recommended to provide it.
+-   The `defaultCard` field allows developers to define an initial look and feel of the plugin’s card, not a crucial part.
+
+For more information on how to use these fields, check out the [Plugin API documentation](#plugin-api).

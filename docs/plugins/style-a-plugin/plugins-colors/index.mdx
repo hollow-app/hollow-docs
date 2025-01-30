@@ -1,0 +1,69 @@
+# Styling Plugins: Understanding CSS Variables
+
+Hollow uses a set of CSS variables to maintain consistent and dynamic styling across the application. This guide will explain the key variables available to plugin developers and how to use them effectively.
+
+## Primary and Secondary Colors
+
+### Primary Color
+
+The `--primary-color` variable represents the accent color of the app. It is used for elements that should stand out, such as buttons, highlighted text, or other interactive components. Since this variable contains RGB values, it provides flexibility to adjust opacity using `rgba`.
+
+**Example Usage:**
+
+```css
+button {
+    color: rgb(var(--primary-color)); /_ Solid accent color _/
+    background-color: rgba(var(--primary-color), 0.5); /_ Semi-transparent accent _/
+}
+```
+
+### Secondary Color
+
+The `--secondary-color` variable is primarily used for background elements, creating a harmonious design across the app. It also supports shades for greater flexibility in styling.
+
+-   **Shades of Secondary Color:** Shades are available through additional variables like `--secondary-color-05`, `--secondary-color-50`, and so on, up to `--secondary-color-95`.
+    -   Lower values (e.g., `--secondary-color-05`) are closer to the base color.
+    -   Higher values (e.g., `--secondary-color-95`) are lighter or darker depending on the base color.
+
+If the base secondary color is black:
+`--secondary-color-05` will be dark gray, and `--secondary-color-95` will be light gray.
+
+If the base secondary color is white:
+`--secondary-color-05` will be off-white, and `--secondary-color-95` will be dark gray.
+
+**Example Usage:**
+
+```css
+.container {
+    background-color: rgb(var(--secondary-color-25)); /_ Subtle background shade _/
+}
+```
+
+### Anti Colors
+
+To ensure visibility of text or elements against primary or secondary colors, Hollow provides two anti-color variables:
+
+-   `--anti-primary-color`
+-   `--anti-secondary-color`
+
+These variables are derived automatically based on the brightness of their corresponding colors:
+
+-   If the primary or secondary color is light, the anti-color will be black.
+-   If the primary or secondary color is dark, the anti-color will be white.
+
+**Important Note:** Anti-colors do not support opacity adjustments. They should be used directly.
+
+**Example Usage:**
+
+```css
+.text-on-secondary {
+    color: var(--anti-secondary-color); /_ Ensures text is visible on secondary color backgrounds _/
+}
+.text-on-primary {
+    color: var(--anti-primary-color); /_ Ensures text is visible on primary color elements _/
+}
+```
+
+## Why Use RGB for Colors?
+
+Hollow uses RGB values for `--primary-color` and `--secondary-color` to allow fine-grained control over opacity with `rgba`. This flexibility helps plugin developers create visually appealing designs while ensuring consistency with the app's dynamic theming.

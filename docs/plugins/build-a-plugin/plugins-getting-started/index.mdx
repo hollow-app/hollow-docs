@@ -1,0 +1,32 @@
+# Getting Started with Making Plugins
+
+To start building plugins for Hollow, you'll need to structure your plugin directory with three main files. These files define your plugin's core functionality, its appearance, and its metadata. Below is an overview of the three essential files your plugin directory will contain:
+
+```js
+    MyPlugin/
+    ├── manifest.json    // Plugin metadata (name, version, etc.)
+    ├── icon.svg         // Visual representation of the plugin
+    └── index.js         // Plugin functionality and code
+```
+
+## manifest.json
+
+The `manifest.json` file is a crucial part of every Hollow plugin. It contains metadata about your plugin, such as its name, version, description, and any dependencies. This file ensures that Hollow can properly identify, load, and manage your plugin.
+
+Learn more about how to structure and customize the `manifest.json` file by visiting the [manifest.json documentation](#manifestjson-documentation).
+
+## icon.svg
+
+The `icon.svg` file represents your plugin visually within the Hollow interface. This file should be a simple and clear icon that users can easily associate with your plugin. Icons are an important part of the user experience, as they provide quick visual identification.
+
+For guidelines on designing and optimizing your plugin's icon, check out the [icon.svg documentation](#iconsvg-documentation).
+
+## index.js
+
+The `index.js` file is the heart of your plugin. It contains the JavaScript code responsible for implementing your plugin's functionality. This file interacts with Hollow's Plugin API to create, manage, and update the plugin's behavior.
+
+For more details on how to write the `index.js` file, refer to the [index.js documentation](#indexjs-documentation).
+
+### Final Vision
+
+Once you have created your plugin and finalized the three core files (`index.js`, `icon.svg`, and `manifest.json`), you're ready to prepare your plugin for integration into Hollow.
