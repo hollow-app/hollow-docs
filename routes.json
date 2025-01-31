@@ -1,46 +1,50 @@
-[
-    {
-      "title": "Introduction",
-      "href": "/introduction",
-      "noLink": false
-    },
-    {
-      "title": "Overview",
-      "href": "/overview",
-      "noLink": false,
-      "items": [
-        { "title": "Architecture", "href": "/hollow-architecture" },
-        { "title": "Editor", "href": "/editor" },
-        { "title": "Tools", "href": "/tools" }
-      ]
-    },
-    {
-      "title": "Plugins",
-      "href": "/plugins",
-      "noLink": true,
-      "items": [
-        { "title": "Introduction", "href": "/plugins-introduction" },
-        { 
-            "title": "Build a Plugin", 
-            "href": "/build-a-plugin", 
-            "noLink": true,
-            "items":[
-                { "title": "Getting Started", "href": "/plugins-getting-started" },
-                { "title": "Manifest", "href": "/plugins-manifest" },
-                { "title": "Icon", "href": "/plugins-icon" },
-                { "title": "index", "href": "/plugins-index" },
-                { "title": "publish", "href": "/plugins-publish" }
-            ]
+{
+    "hollow_version" : "0.0.1",
+    "routes" : [
+        {
+          "title": "Introduction",
+          "href": "/introduction",
+          "noLink": false
         },
-        { 
-            "title": "Style a Plugin", 
-            "href": "/style-a-plugin", 
-            "noLink": true,
-            "items":[
-                { "title": "Colors", "href": "/plugins-colors" },
-                { "title": "Classes", "href": "/plugins-classes" }            
-            ]
-        }
-      ]
+        {
+          "title": "Overview",
+          "href": "/overview",
+          "noLink": false,
+          "items": [
+            { "title": "Architecture", "href": "/hollow-architecture" },
+            { "title": "Editor", "href": "/editor" },
+            { "title": "Tools", "href": "/tools" }
+          ]
+        },
+        {
+          "title": "Plugins",
+          "href": "/plugins",
+          "noLink": true,
+          "items": [
+            { "title": "Introduction", "href": "/plugins-introduction" },
+            { 
+                "title": "Build a Plugin", 
+                "href": "/build-a-plugin", 
+                "noLink": true,
+                "items":[
+                    { "title": "Getting Started", "href": "/plugins-getting-started" },
+                    { "title": "Manifest", "href": "/plugins-manifest" },
+                    { "title": "Icon", "href": "/plugins-icon" },
+                    { "title": "index", "href": "/plugins-index" },
+                    { "title": "publish", "href": "/plugins-publish" }
+                ]
+            },
+            { 
+                "title": "Style a Plugin", 
+                "href": "/style-a-plugin", 
+                "noLink": true,
+                "items":[
+                    { "title": "Colors", "href": "/plugins-colors" },
+                    { "title": "Classes", "href": "/plugins-classes" }            
+                ]
+            }
+        ]
     }
   ]
+
+}
