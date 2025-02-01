@@ -9,7 +9,7 @@
         {
           "title": "Overview",
           "href": "/overview",
-          "noLink": false,
+          "noLink": true,
           "items": [
             { "title": "Architecture", "href": "/hollow-architecture" },
             { "title": "Editor", "href": "/editor" },
