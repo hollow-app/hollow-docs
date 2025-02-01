@@ -13,7 +13,8 @@
           "items": [
             { "title": "Architecture", "href": "/hollow-architecture" },
             { "title": "Editor", "href": "/editor" },
-            { "title": "Tools", "href": "/tools" }
+            { "title": "Tools", "href": "/tools" },
+            { "title": "Cards", "href": "/cards" 
           ]
         },
         {
